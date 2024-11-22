@@ -37,7 +37,13 @@ public class Flappybird extends JPanel{
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+        draw(g);
+
         
+    }
+
+    public void draw(Graphics g){
+        g.drawImage(backgroundImag, 0, 0, boardwidth, boardHeight, null);
     }
         
 
