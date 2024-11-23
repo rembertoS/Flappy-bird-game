@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 
 import java.swing.*;
 
+
+
 public class Flappybird extends JPanel{
 
     int boardwidth = 360;
@@ -19,6 +21,27 @@ public class Flappybird extends JPanel{
     Image birdImg;
     Image topPipeImg;
     Image bottomPipeImg;
+
+    int birdX = boardwidth/8;
+    int bitdY = boardHeight/2;
+    int birdWidth = 34;
+    int birdHeight = 24; 
+
+    class Bird{
+        int x = birdX;
+        int y = bitdY;
+        int width = birdWidth;
+        int height = birdHeight;
+        Image img;
+
+        Bird(Image img){
+            this.img=img;
+
+        }
+    }
+
+    Bird bird;
+
 
 
 
@@ -33,6 +56,11 @@ public class Flappybird extends JPanel{
 
 
 
+        bird = new Bird(birdImg);
+
+
+
+
     }
 
     public void paintComponent(Graphics g){
@@ -44,6 +72,9 @@ public class Flappybird extends JPanel{
 
     public void draw(Graphics g){
         g.drawImage(backgroundImag, 0, 0, boardwidth, boardHeight, null);
+
+        g.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height, null);
+        
     }
         
 
